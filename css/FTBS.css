@@ -209,7 +209,7 @@ body{
     cursor: pointer;
 }
 
-.top_menu_dropdown_item a:link, .top_menu_dropdown_item a:link{
+.top_menu_dropdown_item a:link, .top_menu_dropdown_item a:visited{
     text-decoration: none;
     color: #FFFFFF;
 }
@@ -234,3 +234,28 @@ body{
 .top_menu_option:hover .top_menu_dropdown{
     display: block;
 }
+
+#homepage_main_image_container{
+    width: 940px;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+#homepage_main_image{
+    width: 100%;
+    position: relative;
+}
+
+#homepage_main_image_link{
+    width: 36.7%;
+    height: 36.2%;
+    position: absolute;
+    left: 6.1%;
+    top: 33.5%;
+    cursor: pointer;
+}
+    
