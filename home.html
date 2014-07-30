@@ -7,13 +7,82 @@
     <title>FTBS</title>
     <link rel="stylesheet" href="fonts/MyFontsWebfontsKit.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="css/FTBS.css" type="text/css" charset="utf-8" />
+    <script src = "js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
     <div id = "header">
         <div id = "header_text_section">
             <div id = "login_button">
-                <div class = "vertically_centred">LOGIN / REGISTER</div>
+                <div id = "login_button_text" class = "vertically_centred" onclick = "toggleLoginBox();">
+                    LOGIN / REGISTER
+                </div>
+                <div id = "login_box">
+                    <div id = "login_header">
+                        LOGIN
+                    </div>
+                    <input type = "text" id = "username" class = "login_textbox" placeholder = "Username"/>
+                    <input type = "text" id = "password" class = "login_textbox" placeholder = "Password"/>
+                    
+                    <div id = "login_or_register">
+                        <div id = "login_button_2">
+                            <div class = "vertically_centred">LOGIN</div>
+                        </div>
+                        <div id = "or_text">
+                            <div class = "vertically_centred">or</div>
+                        </div>
+                        <div id = "register_button">
+                            <div class = "vertically_centred">REGISTER</div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    loginBoxShowing = false;
+                    
+                    function hideLoginBox(){
+                        $("#login_box").hide(400);
+                        loginBoxShowing = false;
+                    }
+                    
+                    function showLoginBox(){
+                        $("#login_box").show(400);
+                        loginBoxShowing = true;
+                    }
+                    
+                    function toggleLoginBox(){
+                        if (loginBoxShowing){
+                            hideLoginBox();
+                        }
+                        else{
+                            showLoginBox();
+                        }
+                    }
+                    
+                    //Returns true if child is contained within parent (at any level), false otherwise.
+                    function isDescendant(parent, child) {
+                        if (parent == child){
+                            return true;
+                        }
+                        var node = child.parentNode;
+                        while (node != null) {
+                            if (node == parent) {
+                                return true;
+                            }
+                            node = node.parentNode;
+                        }
+                        return false;
+                    }
+                    document.addEventListener("click", checkHideLoginBox);
+                    
+                    //If the login box is showing, and the screen is clicked elsewhere, hide the login box.
+                    function checkHideLoginBox(e){
+                        if (loginBoxShowing && 
+                            isDescendant(document.getElementById("login_button"), e.target) == false){
+                            hideLoginBox();
+                        }
+                    }
+                    
+                </script>      
             </div>
             <div id = "in_designer">
                 <div class = "vertically_centred">
@@ -24,43 +93,378 @@
     </div>
     <div id = "top_menu_bar">
         <div id = "top_menu_option_1" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred">
+            <div id = "top_menu_option_text_1" class = "top_menu_option_text vertically_centred">
                 NEW IN
+            </div>
+            <div id = "top_menu_dropdown_1" class = "top_menu_dropdown">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
         <div id = "top_menu_option_2" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred">
+            <div id = "top_menu_left_seperator_hider_2" class = "top_menu_left_seperator_hider"></div>
+            <div id = "top_menu_option_text_2" class = "top_menu_option_text vertically_centred">
                 CLOTHING
+            </div>
+            <div id = "top_menu_dropdown_2" class = "top_menu_dropdown">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
         <div id = "top_menu_option_3" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred">
+            <div id = "top_menu_left_seperator_hider_3" class = "top_menu_left_seperator_hider"></div>
+            <div id = "top_menu_option_text_3" class = "top_menu_option_text vertically_centred">
                 SHOES
+            </div>
+            <div id = "top_menu_dropdown_3" class = "top_menu_dropdown">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
         <div id = "top_menu_option_4" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred">
+            <div id = "top_menu_left_seperator_hider_4" class = "top_menu_left_seperator_hider"></div>
+            <div id = "top_menu_option_text_4" class = "top_menu_option_text vertically_centred">
                 ACCESSORIES
+            </div>
+            <div id = "top_menu_dropdown_4" class = "top_menu_dropdown">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
         <div id = "top_menu_option_5" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred">
+            <div id = "top_menu_left_seperator_hider_5" class = "top_menu_left_seperator_hider"></div>
+            <div id = "top_menu_option_text_5" class = "top_menu_option_text vertically_centred">
                 SALE
+            </div>
+            <div id = "top_menu_dropdown_5" class = "top_menu_dropdown">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
         <div id = "top_menu_option_6" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred">
+            <div id = "top_menu_left_seperator_hider_6" class = "top_menu_left_seperator_hider"></div>
+            <div id = "top_menu_option_text_6" class = "top_menu_option_text vertically_centred">
                 STYLIST SELECTION
+            </div>
+            <div id = "top_menu_dropdown_6" class = "top_menu_dropdown">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
         <div id = "top_menu_option_7" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred">
+            <div id = "top_menu_left_seperator_hider_7" class = "top_menu_left_seperator_hider"></div>
+            <div id = "top_menu_option_text_7" class = "top_menu_option_text vertically_centred">
                 BLOG
+            </div>
+            <div id = "top_menu_dropdown_7" class = "top_menu_dropdown">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
         <div id = "top_menu_option_8" class = "top_menu_option">
-            <div class = "top_menu_option_text vertically_centred" style = "background-image: none;">
+            <div id = "top_menu_left_seperator_hider_8" class = "top_menu_left_seperator_hider"></div>
+            <div id = "top_menu_option_text_8" class = "top_menu_option_text vertically_centred">
                 ABOUT US
+            </div>
+            <div id = "top_menu_dropdown_8" class = "top_menu_dropdown" style = "left: auto; right: 0px;">
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Coats and Jackets</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Dresses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jeans</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jewellery and Watches</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Jumpsuits and Playsuits</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Lingerie and Nightwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Shorts and Skirts</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Socks and Tights</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Sunglasses</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Swimwear</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">T-Shirts and Vests</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Tops</a>
+                </div>
+                <div class = "top_menu_dropdown_item">
+                    <a href = "#">Trousers and Leggings</a>
+                </div>
             </div>
         </div>
     </div>
