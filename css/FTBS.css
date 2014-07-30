@@ -352,6 +352,7 @@ body{
     font-size: 12px;
     color: #000000;
     font-weight: bold;
+    position: relative;
 }
 
 .find_out_more a:link, .find_out_more a:visited{
@@ -363,4 +364,82 @@ body{
     color: #000000;
     text-decoration: underline;
 }
-    
+
+.right_arrow{
+    background-image: url(../images/small_right_arrow.png);
+    background-size: 100% 100%;
+    width: 7px;
+    height: 9px;
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    margin-left: 60px;
+}
+
+#bottom_bar{
+    background-color: #000000;
+    width: 100%;
+    height: 285px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+}
+
+#bottom_bar_container{
+    width: 940px;
+    height: 270px;
+    max-width: 100%;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 4px solid #222222;
+    position: relative;
+    display:block;
+}
+
+.bottom_bar_section{
+    width: 22%;
+    margin-left: 0%;
+    margin-right: 4%;   
+    position: relative;
+    float: left;
+}
+
+.bottom_bar_section_title{
+    width: 100%;
+    margin-top: 20px;
+    height: 28px;
+    border-bottom: 2px solid #222222;
+    position: relative;
+}
+
+.bottom_bar_section_title_text{
+    width: 100%;
+    bottom: 3px;
+    text-align: left;
+    font-family: "MuseoSans-500";
+    font-size: 20px;
+    line-height: 105%;
+    color: #222222;
+    position: absolute;
+}
+
+.bottom_bar_link{
+    width: 100%;
+    margin-top: 15px;
+    text-align: left;
+    font-family: "MuseoSans-500";
+    font-size: 13px;
+    color: #222222;
+}
+   
+.bottom_bar_link a:link, .bottom_bar_link a:visited{
+    color: #222222;
+    text-decoration: none;
+}
+
+.bottom_bar_link a:hover{
+    color: #222222;
+    text-decoration: underline;
+} 
