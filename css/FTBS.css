@@ -32,17 +32,21 @@ body{
     height: 42px;
     position: relative;
     float: right;
+    cursor: pointer;
 }
 
 #login_button_text{
     text-align: center;
     font-family: "MuseoSans-500";
     font-size: 13px;
-    cursor: pointer;
 }
 
-#login_button_text:hover{
+#login_button:hover #login_button_text{
     text-decoration: underline;
+}
+
+#login_button:hover #login_box{
+    display: block;
 }
 
 #login_box{
@@ -72,7 +76,7 @@ body{
     border: none;
     width: 190px;
     position: relative;
-    margin-left: 0px;
+    margin-left: 20px;
     margin-top: 10px;
     height: 30px;
 }

@@ -7,14 +7,13 @@
     <title>FTBS</title>
     <link rel="stylesheet" href="fonts/MyFontsWebfontsKit.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="css/FTBS.css" type="text/css" charset="utf-8" />
-    <script src = "js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
     <div id = "header">
         <div id = "header_text_section">
             <div id = "login_button">
-                <div id = "login_button_text" class = "vertically_centred" onclick = "toggleLoginBox();">
+                <div id = "login_button_text" class = "vertically_centred">
                     LOGIN / REGISTER
                 </div>
                 <div id = "login_box">
@@ -36,53 +35,6 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    loginBoxShowing = false;
-                    
-                    function hideLoginBox(){
-                        $("#login_box").hide(400);
-                        loginBoxShowing = false;
-                    }
-                    
-                    function showLoginBox(){
-                        $("#login_box").show(400);
-                        loginBoxShowing = true;
-                    }
-                    
-                    function toggleLoginBox(){
-                        if (loginBoxShowing){
-                            hideLoginBox();
-                        }
-                        else{
-                            showLoginBox();
-                        }
-                    }
-                    
-                    //Returns true if child is contained within parent (at any level), false otherwise.
-                    function isDescendant(parent, child) {
-                        if (parent == child){
-                            return true;
-                        }
-                        var node = child.parentNode;
-                        while (node != null) {
-                            if (node == parent) {
-                                return true;
-                            }
-                            node = node.parentNode;
-                        }
-                        return false;
-                    }
-                    document.addEventListener("click", checkHideLoginBox);
-                    
-                    //If the login box is showing, and the screen is clicked elsewhere, hide the login box.
-                    function checkHideLoginBox(e){
-                        if (loginBoxShowing && 
-                            isDescendant(document.getElementById("login_button"), e.target) == false){
-                            hideLoginBox();
-                        }
-                    }
-                    
-                </script>      
             </div>
             <div id = "in_designer">
                 <div class = "vertically_centred">
