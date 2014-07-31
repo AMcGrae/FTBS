@@ -421,6 +421,48 @@
             </div>
         </div>
     </div>
+    <div id = "product_page_main_section">
+        <div id = "product_page_images_container">
+            <div id = "product_page_main_image_box">
+                <div id = "product_page_main_image"></div>
+            </div>
+            <div id = "product_page_thumbnails_container">
+                <div class = "product_page_thumbnail_box">
+                    <div id = "product_page_thumbnail_1" class = "product_page_thumbnail_image" 
+                        onclick = "showImage(0);">
+                    </div>
+                </div>
+                <div class = "product_page_thumbnail_box">
+                    <div id = "product_page_thumbnail_2" class = "product_page_thumbnail_image" 
+                        onclick = "showImage(1);">
+                    </div>
+                </div>
+                <div class = "product_page_thumbnail_box" style = "margin-right: 0px;">
+                    <div id = "product_page_thumbnail_3" class = "product_page_thumbnail_image" 
+                        onclick = "showImage(2);">
+                    </div>
+                </div>
+                <script>
+                    largeImages = [];
+                    largeImages[0] = new Image();
+                    largeImages[0].src = "images/large_dress_image.png";
+                    largeImages[1] = new Image();
+                    largeImages[1].src = "images/large_dress_image.png";
+                    largeImages[2] = new Image();
+                    largeImages[2].src = "images/large_dress_image.png";
+                    
+                    //Clicking the thumbnails will cause a larger version to appear above. This would be
+                    //more noticeable if they weren't all the same.
+                    function showImage(n){
+                        document.getElementById("product_page_main_image").style.backgroundImage = 
+                            "url("+largeImages[n].src+")";
+                    }
+                </script>
+            </div>
+        </div>
+        <div id = "product_page_text_container">
+        </div>
+    </div>
     <div id = "product_page_bottom_bar">
         <div id = "bottom_bar_container">
             <div class = "bottom_bar_section">
